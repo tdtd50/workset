@@ -1,0 +1,202 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 页面背景设置 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://imgs.699pic.com/images/402/659/327.jpg!list1x.v2');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+
+/* 主容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+header h1 {
+    color: #ffffff;
+    font-size: 2.8rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+header i {
+    margin-right: 15px;
+    color: #e67e22;
+}
+
+/* 项目网格布局 */
+.meals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+/* 项目卡片样式 */
+.meal {
+    background: rgba(255, 255, 255, 0.8); /* 80% 不透明度 */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* 改为all以包含透明度变化 */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    backdrop-filter: blur(5px); /* 可选：添加毛玻璃效果 */
+}
+
+.meal:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.95); /* 悬停时增加不透明度 */
+}
+
+/* 项目图片区域 */
+.meal-image {
+    height: 180px;
+    background: linear-gradient(135deg, #e67e22 0%, #e74c3c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+}
+
+/* 项目信息区域 */
+.meal-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.meal-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.meal-description {
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+/* 标签样式 */
+.meal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.tag {
+    background: #f1f1f1;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.tag:nth-child(1) {
+    background: #e8f4fd;
+    color: #2980b9;
+}
+
+.tag:nth-child(2) {
+    background: #e8f8f5;
+    color: #27ae60;
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header {
+        padding: 25px 0;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .meals-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .meal-image {
+        height: 150px;
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 20px 0;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .meals-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .meal-image {
+        height: 140px;
+        font-size: 3rem;
+    }
+    
+    .meal-info {
+        padding: 20px;
+    }
+    
+    .meal-title {
+        font-size: 1.3rem;
+    }
+}
